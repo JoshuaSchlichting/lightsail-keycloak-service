@@ -3,7 +3,10 @@ This repository is a terraform module that creates an AWS Lightsail Instance whi
 
 # BEFORE GETTING STARTED
 This module requires a Let's Encrypt payload to be stored in an S3 bucket with the following prefix: `letsencrypt/example.com`
-This can be easily done as a one-time requirement by manually SSH'ing into the Lightsail instance and executing the `/update-cert.sh` script and following the directions. After executiing this, destroy and recreate the module hosting the instance.
+This can be easily done as a one-time requirement by manually SSH'ing into the Lightsail instance and adhering to the following steps:
+  1. Execute the `/update-cert.sh` script in located at `/`
+  1. Follow the Let's Encrypt prompts
+  1. Destroy and recreate the module hosting the instance.
 > *Why do this instead of the usual Let's Encrypt automation?*
 > 
 > This route avoids hitting the rate limits for the Let's Encrypt servers, enabling you to destroy and recreate this instance as often as needed.
